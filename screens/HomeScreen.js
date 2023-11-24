@@ -30,10 +30,11 @@ const HomeScreen = ({ navigation }) => {
         }}
       >
         {/* 출발지와 도착지에 마커 추가 */}
-        {origin && <Marker coordinate={{ latitude: 37.78825, longitude: -122.4324 }} title="출발지" />}
-        {destination && <Marker coordinate={{ latitude: 37.79825, longitude: -122.4424 }} title="도착지" />}
+        {origin && <Marker coordinate={{ latitude: 36.3504, longitude: 127.3845 }} title="출발지" />}
+        {destination && <Marker coordinate={{ latitude: 36.3504, longitude: 127.3745}} title="도착지" />}
       </MapView>
       {/* 출발지, 도착지 입력창과 버튼 */}
+      
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -48,6 +49,7 @@ const HomeScreen = ({ navigation }) => {
           onChangeText={(text) => setDestination(text)}
         />
       </View>
+      
       {/* 길찾기 시작 버튼 */}
       <View style={styles.buttonContainer}>
         <Button
