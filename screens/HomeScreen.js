@@ -52,7 +52,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={styles.buttonText}>유료주차장</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <Icon name="hand-holding-usd" type="font-awesome" size={24} color="white" />
+            <Icon name="dollar-sign" type="font-awesome" size={24} color="white" />
             <Text style={styles.buttonText}>무료주차장</Text>
           </TouchableOpacity>
         </View>
@@ -97,11 +97,12 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: 'gray',
+    borderColor: '#B0C4DE',
     borderWidth: 1,
     marginVertical: 10,
     padding: 10,
     width: '80%',
+    borderRadius: 8,
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -109,8 +110,8 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   button: {
-    backgroundColor: 'purple',
-    borderRadius: 5,
+    backgroundColor: '#800080',
+    borderRadius: 8,
     padding: 10,
     alignItems: 'center',
     width: '30%',
@@ -120,8 +121,8 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   routeButton: {
-    backgroundColor: 'purple',
-    borderRadius: 5,
+    backgroundColor: '#800080',
+    borderRadius: 8,
     padding: 10,
     flexDirection: 'row',
     alignItems: 'center',
