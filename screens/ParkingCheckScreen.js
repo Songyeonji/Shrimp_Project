@@ -45,7 +45,7 @@ const ParkingCheckScreen = () => {
           <Image source={require('../assets/shrimp.png')} style={{ width: 40, height: 40 }} />
         </Marker>
 
-        
+        {/* 누르면 기본적으로 마커 뜸 -데이터 베이스 적용 기본틀*/}
         {showBanMarker && (
           <Marker coordinate={{ latitude: 36.3604, longitude: 127.3945 }}>
             <Icon name="ban" type="font-awesome" size={24} color="red" />

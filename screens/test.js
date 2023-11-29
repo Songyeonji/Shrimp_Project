@@ -11,6 +11,18 @@ const MapTab = createBottomTabNavigator();
 
 const MapScreen = ({ route }) => {
   const navigation = useNavigation(); // navigation 객체 가져오기
+//장고 불러오기
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://your-django-server/api/items/')
+      .then(response => {
+        setItems(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   // 일단 빈칸일 때 오류 방지를 위해 기본값 설정
   const { origin = '', destination = '' } = route?.params || {};
@@ -22,24 +34,10 @@ const MapScreen = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <MapView
-        style={styles.map}
-        initialRegion={{
-          latitude: 36.3504, // 대전의 위도
-          longitude: 127.3845, // 대전의 경도
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      >
-        {/* 출발지와 도착지에 마커 추가 */}
-        <Marker coordinate={{ latitude: 36.3504, longitude: 127.3845 }} title="출발지" />
-        <Marker coordinate={{ latitude: 36.3504, longitude: 127.3745 }} title="도착지" />
-        {/* Shrimp 이미지 표시 - 현재 자기 위치를 표시하는 아이콘*/}
-        <Marker coordinate={{ latitude: 36.3504, longitude: 127.3945 }}>
-          <Image source={require('../assets/shrimp.png')} style={{ width: 40, height: 40 }} />
-        </Marker>
-      </MapView>
-
+      
+      {items.map(item => (
+        <Text key={item.id}>{item.name}</Text>
+      ))}
   
 
       {/* 현재 주소, 시간, 키로수 표시 부분 */}
