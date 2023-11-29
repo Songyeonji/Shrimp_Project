@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -7,9 +7,9 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 
 
-const MapTab = createBottomTabNavigator();
+const TestTab = createBottomTabNavigator();
 
-const MapScreen = ({ route }) => {
+const Test = ({ route }) => {
   const navigation = useNavigation(); // navigation 객체 가져오기
 //장고 불러오기
   const [items, setItems] = useState([]);
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MapScreen;
+export default Test;

@@ -8,7 +8,7 @@ const HomeScreen = ({ navigation }) => {
   const [destination, setDestination] = useState('');
 
   const startNavigation = () => {
-    navigation.navigate('Map', {
+    navigation.navigate('Test', {
       origin,
       destination,
     });
